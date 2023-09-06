@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { BlogPost, User, Comment } = require('../models');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
 		const blogpostData = await BlogPost.findAll({
 			order: [['date_created', 'DESC']],
