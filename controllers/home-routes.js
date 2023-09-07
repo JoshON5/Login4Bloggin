@@ -24,7 +24,7 @@ router.get('/', withAuth, async (req, res) => {
 
 		res.render('homepage', {
 			blogposts,
-			logged_in: req.session.logged_in,
+			logged_in: req.session.loggedIn,
 		});
 	} catch (err) {
         console.log(err);
