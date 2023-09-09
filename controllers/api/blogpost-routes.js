@@ -11,13 +11,6 @@ router.get('/', withAuth, async (req,res) => {
                     model: User,
                     attributes: ['name']
                 },
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['name']
-                    }
-                }
             ]
         })
 
@@ -57,7 +50,8 @@ router.get('/:id', withAuth, async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     try {
         const newBlogpost = await BlogPost.create({
-            ...req.body,
+            title: req.body.title,
+            blogpost: req.body.blogpost,
             user_id: req.session.user_id,
         });
 
