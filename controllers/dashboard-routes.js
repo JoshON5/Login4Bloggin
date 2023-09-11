@@ -18,7 +18,7 @@ router.get('/', withAuth, async (req, res) => {
         });
 
         const blogpost = blogpostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { blogpost, loggedIn: true });
+        res.render('dashboard', { blogpost, logged_in: true });
     } catch (err){
         res.status(500).json(err)
     }
