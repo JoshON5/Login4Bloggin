@@ -11,13 +11,6 @@ router.get('/', withAuth, async (req, res) => {
 					model: User,
 					attributes: ['name'],
 				},
-				{
-					model: Comment,
-					include: {
-						model: User,
-						attributes: ['name'],
-					},
-				},
 			],
 		});
 		const blogposts = blogpostData.map((post) => post.get({ plain: true }));
