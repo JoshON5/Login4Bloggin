@@ -6,6 +6,7 @@ router.get('/', withAuth, async (req,res) => {
     try {
         const blogpostData = await BlogPost.findAll({
             order: [['date_created', 'DESC']],
+            attributes: ['id', 'title', 'blogpost', 'date_created'],
             include: [
                 {
                     model: User,
