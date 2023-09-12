@@ -8,7 +8,7 @@ router.get('/',  withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id
             },
-            attributes:['id', 'name', 'blogpost', 'date_created'],
+            attributes:['id', 'title', 'blogpost', 'date_created'],
             order: [['date_created', 'DESC']],
             include: [
                 {
