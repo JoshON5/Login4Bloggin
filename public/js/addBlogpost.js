@@ -23,3 +23,4 @@ async function newFormHandler(event) {
   }
   
   document.querySelector('.new-blogpost').addEventListener('submit', newFormHandler);
+  document.querySelector('.add-blogpost').addEventListener('click', document.location.replace('/addBlogpost'))
