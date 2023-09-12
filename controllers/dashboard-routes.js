@@ -24,6 +24,14 @@ router.get('/', withAuth, async (req, res) => {
     }
 })
 
+router.get('/addblogpost', withAuth, async (req, res) => {
+    try {
+        res.render('addBlogpost');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('update/:id', withAuth, (req, res) => {
     try{
         const blogpostData = BlogPost.findByPk({
